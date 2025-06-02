@@ -17,7 +17,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author dioge
+ * @author LUAN
  */
 public class AgenciaDao {
     
@@ -78,6 +78,41 @@ public class AgenciaDao {
         agencia.setNumero("numero");
         agencia.setCep(rs.getString("cep"));
         return agencia;
+    }
+    
+    public Agencia buscarClientePorCodigoAgencia(String codigo_agencia) {
+        String sql = "SELECT * FROM agencias WHERE codigo_agencia = ?";
+        try (Connection con = MySQL.connect(); PreparedStatement ps = con.prepareStatement(sql)) {
+            ps.setString(1, codigo_agencia);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                return construirAgenciaSql(rs);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ClienteDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+    
+    public static void main(String[] args) {
+        AgenciaDao agenciaDao = new AgenciaDao();
+        
+        // Teste de Inserção
+        System.out.println("Teste de Inserção");
+        Agencia agencia = new Agencia(null, "5678", "Três Corações", "MG", "Rua José Bento", "304", "37414318");
+        agenciaDao.inserirAgencia(agencia);
+        
+        //Teste loop todas agencias
+        System.out.println("Teste loop todas agencias");
+        List<Agencia> agencias = agenciaDao.listarTodasAgencias();
+        agencias.forEach(ag -> System.out.println("Codigo: " + ag.getCodigoAgencia()));
+        
+        // Teste buscar agencias por Id
+        System.out.println("Teste buscar Agencias por Id");
+        Agencia ag = agenciaDao.buscarAgenciaPorId(1l);
+        System.out.println("Codigo : " + ag.getCodigoAgencia());
+        
+        
     }
     
 }

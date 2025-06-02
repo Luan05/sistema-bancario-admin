@@ -19,7 +19,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author dioge
+ * @author LUAN
  */
 public class ClienteDao {
 

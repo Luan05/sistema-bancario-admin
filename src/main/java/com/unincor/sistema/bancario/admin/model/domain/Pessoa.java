@@ -8,7 +8,7 @@ import java.time.LocalDate;
 
 /**
  *
- * @author dioge
+ * @author LUAN
  */
 public abstract class Pessoa {
     

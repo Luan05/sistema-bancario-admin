@@ -20,7 +20,7 @@ public class MySQL {
     
     private static final String USER = "root";
     
-    private static final String PASS = "admin";
+    private static final String PASS = "123456";
     
     public static Connection connect() {
         try {

@@ -6,7 +6,7 @@ package com.unincor.sistema.bancario.admin.model.domain;
 
 /**
  *
- * @author dioge
+ * @author LUAN
  */
 public class Gerente extends Pessoa {
     
