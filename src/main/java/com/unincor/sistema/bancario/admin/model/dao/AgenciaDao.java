@@ -22,7 +22,7 @@ import java.util.logging.Logger;
 public class AgenciaDao {
     
     public void inserirAgencia(Agencia agencia) {
-        String sql = "INSERT INTO AGENCIA(codigo_agencia, cidade, uf, "
+        String sql = "INSERT INTO AGENCIAS(codigo_agencia, cidade, uf, "
                 + "logradouro, numero, cep) VALUES (?, ?, ?, ?, ?, ?)";
         try(Connection con = MySQL.connect(); 
                 PreparedStatement ps = con.prepareStatement(sql)) {
