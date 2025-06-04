@@ -24,11 +24,13 @@ public class TelaCadastroAgencia extends javax.swing.JDialog {
     public TelaCadastroAgencia(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        setLocationRelativeTo(parent);
     }
     
     public TelaCadastroAgencia(java.awt.Dialog parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        setLocationRelativeTo(parent);
     }
 
     /**

@@ -20,6 +20,7 @@ public class TelaListagemAgencias extends javax.swing.JDialog {
     public TelaListagemAgencias(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        setLocationRelativeTo(parent);
     }
 
     /**
