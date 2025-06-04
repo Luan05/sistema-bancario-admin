@@ -25,6 +25,11 @@ public class TelaCadastroAgencia extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
     }
+    
+    public TelaCadastroAgencia(java.awt.Dialog parent, boolean modal) {
+        super(parent, modal);
+        initComponents();
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -138,6 +143,7 @@ public class TelaCadastroAgencia extends javax.swing.JDialog {
         try {
             Agencia agencia = contruirAgenciaView();
             agenciaService.salvarAgencia(agencia);
+            JOptionPane.showMessageDialog(this, "Salvo com sucesso!");
         } catch (CadastroException ex) {
             JOptionPane.showMessageDialog(this, ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
         }
