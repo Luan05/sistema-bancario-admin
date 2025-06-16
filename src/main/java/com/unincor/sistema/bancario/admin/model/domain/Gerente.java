@@ -4,6 +4,8 @@
  */
 package com.unincor.sistema.bancario.admin.model.domain;
 
+import java.time.LocalDate;
+
 /**
  *
  * @author LUAN
@@ -14,6 +16,17 @@ public class Gerente extends Pessoa {
     private Agencia agencia;
 
     public Gerente() {
+    }
+    
+    public Gerente(Long idGerente, String nome, String cpf, LocalDate dataNascimento, String email, String telefone, String senhaHash, Agencia agencia){
+        this.idGerente = idGerente;
+        this.nome = nome;
+        this.cpf = cpf;
+        this.dataNascimento = dataNascimento;
+        this.email = email;
+        this.telefone = telefone;
+        this.senhaHash = senhaHash;
+        this.agencia = agencia;
     }
 
     public Long getIdGerente() {

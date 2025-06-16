@@ -25,7 +25,7 @@ public class AgenciaService {
     
     public void salvarAgencia(Agencia agencia) throws CadastroException {
         if (agencia.getCodigoAgencia() == null || agencia.getCodigoAgencia() .isBlank()) {
-            throw new CadastroException ("A agência não possui" + "um código de agência!");
+            throw new CadastroException ("A agência não possui um código de agência!");
         }
         
         
