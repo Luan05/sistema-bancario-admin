@@ -56,7 +56,7 @@ public class FuncionarioDao {
     public Funcionario buscarFuncionarioPorId(Long idFuncionario){
         String sql = "SELECT * FROM funcionarios WHERE id_funcionario = ?";
         try (Connection con = MySQL.connect(); PreparedStatement ps = con.prepareStatement(sql)){
-            ps.setLong(1, idFuncionario);
+            ps.setObject(1, idFuncionario);
             ResultSet rs = ps.executeQuery();
             if(rs.next()) {
                 return construirFuncionarioSql(rs);

@@ -62,7 +62,7 @@ public class GerenteDao {
     public Gerente buscarGerentePorId(Long idGerente) {
         String  sql = "SELECT * FROM gerentes WHERE id_gerente = ?";
         try(Connection con = MySQL.connect(); PreparedStatement ps = con.prepareStatement(sql)){
-            ps.setLong(1, idGerente);
+            ps.setObject(1, idGerente);
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
                 return construirGerenteSql(rs);

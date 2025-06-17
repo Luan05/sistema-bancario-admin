@@ -30,11 +30,6 @@ public class GerenteService {
             throw new CadastroException("O Gerente já está cadastrado!");
         }
         
-        // Validar se o gerente está com os campos preenchidos
-        if (gerente.getIdGerente() == null) {
-            throw new CadastroException ("O gerente não possui um ID!");
-        }
-        
         if (gerente.getNome() == null || gerente.getNome().isBlank()) {
             throw new CadastroException ("O gerente não possui um nome informado!");
         }
@@ -59,7 +54,7 @@ public class GerenteService {
             throw new CadastroException ("O gerente não possui uma senha hash informada!");
         }
         
-        if (gerente.getAgencia() == null) {
+        if (gerente.getAgencia().getCodigoAgencia()== null) {
             throw new CadastroException ("O gerente não possui uma Agência!");
         }
 
@@ -73,10 +68,9 @@ public class GerenteService {
     
     public static void main(String[] args)  {
         GerenteService gerenteService = new GerenteService();
-        AgenciaDao agenciaDao = new AgenciaDao();
-        Agencia ag = agenciaDao.buscarAgenciaPorId(1l);
+        Agencia ag = new AgenciaDao().buscarAgenciaPorId(1l);
         
-        Gerente gerente = new Gerente(null, "Luan Emidio Cruz", "23794688902", LocalDate.now(), "luan@gmail.com", "35911232425", "jdkalfjdksksks", ag);
+        Gerente gerente = new Gerente(null, "Luan Emidio Cruz", "23794688902", LocalDate.now(), "luan@gmail.com", "35911232425", "jdkalfjdksksks",ag);
         
         try {
             gerenteService.salvarGerente(gerente);

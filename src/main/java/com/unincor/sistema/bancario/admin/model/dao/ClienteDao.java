@@ -57,7 +57,7 @@ public class ClienteDao {
     public Cliente buscarClientePorId(Long idCliente) {
         String sql = "SELECT * FROM clientes WHERE id_cliente = ?";
         try (Connection con = MySQL.connect(); PreparedStatement ps = con.prepareStatement(sql)) {
-            ps.setLong(1, idCliente);
+            ps.setObject(1, idCliente);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 return construirClienteSql(rs);

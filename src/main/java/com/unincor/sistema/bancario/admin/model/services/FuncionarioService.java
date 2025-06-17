@@ -28,10 +28,6 @@ public class FuncionarioService {
         }
         
         // Validar se o gerente está com os campos preenchidos
-        if (funcionario.getIdFuncionario()== null) {
-            throw new CadastroException ("O Funcionário não possui um ID!");
-        }
-        
         if (funcionario.getNome() == null || funcionario.getNome().isBlank()) {
             throw new CadastroException ("O funcionário não possui um nome informado!");
         }
