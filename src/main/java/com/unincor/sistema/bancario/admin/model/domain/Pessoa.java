@@ -69,6 +69,11 @@ public abstract class Pessoa {
     public void setSenhaHash(String senhaHash) {
         this.senhaHash = senhaHash;
     }
+
+    @Override
+    public String toString() {
+        return "Pessoa{" + "nome=" + nome + ", cpf=" + cpf + ", dataNascimento=" + dataNascimento + ", email=" + email + ", telefone=" + telefone + ", senhaHash=" + senhaHash + '}';
+    }
     
     
     

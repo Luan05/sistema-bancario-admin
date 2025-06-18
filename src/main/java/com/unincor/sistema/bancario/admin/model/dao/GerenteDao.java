@@ -81,13 +81,15 @@ public class GerenteDao {
         gerente.setEmail(rs.getString("email"));
         gerente.setTelefone(rs.getString("telefone"));
         gerente.setSenhaHash(rs.getString("senha_hash"));
-        long idAgencia = rs.getLong("agencia");
+        /*long idAgencia = rs.getLong("agencia");
     if (idAgencia != 0) {
         Agencia agencia = new Agencia();
         agencia.setIdAgencia(idAgencia);
     } else {
         gerente.setAgencia(null);
-    }
+    }*/
+        Agencia agencia = new AgenciaDao().buscarAgenciaPorId(rs.getLong("id_agencia"));
+        gerente.setAgencia(agencia);
         return gerente;
     }
     

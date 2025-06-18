@@ -45,6 +45,11 @@ public class Gerente extends Pessoa {
         this.agencia = agencia;
     }
 
+    @Override
+    public String toString() {
+        return "Gerente{" + "idGerente=" + idGerente + ", agencia=" + agencia + '}';
+    }
+
     
     
     
