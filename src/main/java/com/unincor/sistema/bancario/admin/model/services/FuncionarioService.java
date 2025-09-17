@@ -72,7 +72,7 @@ public class FuncionarioService {
         try {
             funcionarioService.salvarFuncionario(funcionario);
         } catch (CadastroException ex) {
-            Logger.getLogger(GerenteService.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FuncionarioService.class.getName()).log(Level.SEVERE, null, ex);
         }
         
     }
